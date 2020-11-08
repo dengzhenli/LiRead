@@ -68,6 +68,7 @@ class BookInfoEditActivity :
     private fun upView(book: Book) {
         tie_book_name.setText(book.name)
         tie_book_author.setText(book.author)
+        tie_book_remark.setText(book.remark)
         tie_cover_url.setText(book.getDisplayCover())
         tie_book_intro.setText(book.getDisplayIntro())
         upCover()
@@ -83,6 +84,7 @@ class BookInfoEditActivity :
         viewModel.book?.let { book ->
             book.name = tie_book_name.text?.toString() ?: ""
             book.author = tie_book_author.text?.toString() ?: ""
+            book.remark = tie_book_remark.text?.toString() ?: ""
             val customCoverUrl = tie_cover_url.text?.toString()
             book.customCoverUrl = if (customCoverUrl == book.coverUrl) null else customCoverUrl
             book.customIntro = tie_book_intro.text?.toString()

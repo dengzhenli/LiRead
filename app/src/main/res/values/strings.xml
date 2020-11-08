@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--App-->
-    <string name="app_name">Legado</string>
+    <string name="app_name">LiMusic</string>
     <string name="receiving_shared_label">Legado·search</string>
     <string name="tip_perm_request_storage">Legado needs storage access to find and read books. please go "App Settings" to allow "Storage permission".</string>
 
@@ -166,6 +166,7 @@
     <string name="add_book_url">Add book url</string>
     <string name="background">Background</string>
     <string name="author">Author</string>
+    <string name="remark">Remark</string>
     <string name="author_show">Author: %s</string>
     <string name="aloud_stop">Speak Stopped</string>
     <string name="clear_cache">Clear cache</string>

@@ -21,7 +21,11 @@ class BooksAdapterList(context: Context, private val callBack: CallBack) :
         with(holder.itemView) {
             if (bundle == null) {
                 ATH.applyBackgroundTint(this)
-                tv_name.text = item.name
+                var bookname = item.name
+                if (item.remark.isNotEmpty()){
+                    bookname = item.remark
+                }
+                tv_name.text = bookname
                 tv_author.text = item.author
                 tv_read.text = item.durChapterTitle
                 tv_last.text = item.latestChapterTitle

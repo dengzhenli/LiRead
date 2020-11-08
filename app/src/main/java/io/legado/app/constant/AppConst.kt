@@ -69,4 +69,7 @@ object AppConst {
         "com.android.internal.view.menu.ListMenuItemView",
         "androidx.appcompat.view.menu.ListMenuItemView"
     )
+
+
+    const val MAX_READ = 10
 }

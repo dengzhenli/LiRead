@@ -1,5 +1,6 @@
 package io.legado.app.service.help
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.hankcs.hanlp.HanLP
 import io.legado.app.App
@@ -19,6 +20,7 @@ import io.legado.app.ui.book.read.page.entities.TextChapter
 import io.legado.app.ui.book.read.page.entities.TextPage
 import io.legado.app.ui.book.read.page.provider.ChapterProvider
 import io.legado.app.ui.book.read.page.provider.ImageProvider
+import io.legado.app.utils.ReadControl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -103,6 +105,12 @@ object ReadBook {
     }
 
     fun moveToNextChapter(upContent: Boolean): Boolean {
+        if (ReadControl.check(book?.name, durChapterIndex + 1)) {
+            ReadControl.saveMax(book?.name, durChapterIndex + 1);
+        } else{
+            return false
+        }
+
         if (durChapterIndex < chapterSize - 1) {
             durPageIndex = 0
             durChapterIndex++
@@ -228,6 +236,11 @@ object ReadBook {
      * 加载章节内容
      */
     fun loadContent(resetPageOffset: Boolean) {
+        if (ReadControl.check(book?.name, durChapterIndex)){
+            ReadControl.saveMax(book?.name, durChapterIndex);
+        } else{
+            return
+        }
         loadContent(durChapterIndex, resetPageOffset = resetPageOffset)
         loadContent(durChapterIndex + 1, resetPageOffset = resetPageOffset)
         loadContent(durChapterIndex - 1, resetPageOffset = resetPageOffset)
