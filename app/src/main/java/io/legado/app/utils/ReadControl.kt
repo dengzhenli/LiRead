@@ -26,10 +26,13 @@ object ReadControl {
         }
     }
 
+    /**
+     * 第一天不限制
+     */
     fun check(book: String?, captionIndex: Int): Boolean {
         book?:let { return false }
         val lastTotal = SharePrefUtil.getIntData(fileName, book + keyLast)
-        return captionIndex - lastTotal <= AppConst.MAX_READ
+        return lastTotal == 0 || captionIndex - lastTotal <= AppConst.MAX_READ
     }
 
 
