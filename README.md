@@ -5,8 +5,6 @@ fork自[legado（阅读3.0）](https://github.com/gedoor/legado)
 * 防沉迷，看本地书籍每天10章限制（嗯，个人需求，）
 
 
-
+其他说明  
 * [书源规则](https://alanskycn.gitee.io/teachme/)
-
-
 * 仅供学习使用
