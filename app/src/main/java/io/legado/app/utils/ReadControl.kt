@@ -16,7 +16,7 @@ object ReadControl {
 
     fun saveMax(book: String?, captionIndex: Int) {
         book?:let { return }
-        val nowDate = getNowData()
+        val nowDate = getCurrentDate()
         val lastDt = SharePrefUtil.getData(fileName, book + keyLastDt)
         val total = SharePrefUtil.getIntData(fileName, book + keyTotal)
         SharePrefUtil.saveData(fileName, book + keyTotal, maxOf(captionIndex,total))
@@ -36,9 +36,9 @@ object ReadControl {
     }
 
 
-    private fun getNowData(): String {
+    private fun getCurrentDate(): String {
         return SimpleDateFormat("yyyy-MM-dd",
-                Locale.getDefault()).format(Date(System.currentTimeMillis()))
+                Locale.getDefault()).format(Date(System.currentTimeMillis()-6*60*60*1000)) //早上六点刷新
     }
 
 
