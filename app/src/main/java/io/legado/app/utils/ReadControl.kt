@@ -21,7 +21,7 @@ object ReadControl {
         val total = SharePrefUtil.getIntData(fileName, book + keyTotal)
         SharePrefUtil.saveData(fileName, book + keyTotal, maxOf(captionIndex,total))
         if (lastDt != nowDate) {
-            SharePrefUtil.saveData(fileName, book + keyLast, total)
+            SharePrefUtil.saveData(fileName, book + keyLast, maxOf(captionIndex,total))
             SharePrefUtil.saveData(fileName, book + keyLastDt, nowDate)
         }
     }
