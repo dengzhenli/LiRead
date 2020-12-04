@@ -31,7 +31,7 @@ android {
         }
     }
     defaultConfig {
-        applicationId "org.fatty.limusic"
+        applicationId "org.fatty.liread"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
